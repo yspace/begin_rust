@@ -16,6 +16,19 @@ pub fn mod_init(app: App) -> App {
     )
 }
 
+// 下面的行不通呀
+//
+//pub fn mod_init2(app: &App) {
+//    // build commands
+//    app.command(
+//        Command::new()
+//            .name("my_lib/info")
+//            .action(|c: &Context| {
+//                 action_info();
+//            })
+//    );
+//}
+
 pub fn action_info(){
     println!("[my_lib]: hi this is info from my_lib module ");
 }

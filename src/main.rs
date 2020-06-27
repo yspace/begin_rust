@@ -134,6 +134,12 @@ fn main() {
         .action(|c: &Context| {
             the_book::ownership::ref_borrow::action_ref_as_param();
         }))
+        .command(Command::new()
+        .name("book-mut-ref")
+        .usage("ownership: scope ")
+        .action(|c: &Context| {
+            the_book::ownership::ref_borrow::action_mut_ref() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
