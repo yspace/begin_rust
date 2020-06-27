@@ -123,13 +123,22 @@ fn main() {
             the_book::ownership::scope::action_string() ;
         }))
         .command(Command::new()
-        .name("book-string")
+        .name("book-ownership-funcs")
         .usage("ownership: scope ")
         .action(|c: &Context| {
-            the_book::ownership::scope::action_string() ;
+            the_book::ownership::scope::action_ownership_func();
+        }))
+        .command(Command::new()
+        .name("book-ref-borrow")
+        .usage("ownership: scope ")
+        .action(|c: &Context| {
+            the_book::ownership::ref_borrow::action_ref_as_param();
         }))
         // ...
         ;
+    // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
+     // let app = xxx_mod::init_mod(app) ; // 传入传出
+     let app = my_lib::mod_init(app) ;
 
     app.run(args);
 }
