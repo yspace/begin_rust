@@ -152,6 +152,12 @@ fn main() {
         .action(|c: &Context| {
             the_book::structs::define_instantiate::action_def();
         }))
+        .command(Command::new()
+        .name("book-struct2")
+        .usage("struct ： example program ")
+        .action(|c: &Context| {
+            the_book::structs::example_prog::action_rectangles();
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
