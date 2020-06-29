@@ -9,7 +9,7 @@ mod my_lib;
 mod my_mod;
 mod action;
 
-// rust by examples
+// rust by examples ==》 RBE
 mod examples;
 
 // the book
@@ -139,6 +139,12 @@ fn main() {
         .usage("ownership: scope ")
         .action(|c: &Context| {
             the_book::ownership::ref_borrow::action_mut_ref() ;
+        }))
+        .command(Command::new()
+        .name("book-slice")
+        .usage("slice ： string ")
+        .action(|c: &Context| {
+            the_book::ownership::slice::action_string_slices() ;
         }))
         // ...
         ;
