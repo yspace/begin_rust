@@ -146,6 +146,12 @@ fn main() {
         .action(|c: &Context| {
             the_book::ownership::slice::action_string_slices() ;
         }))
+        .command(Command::new()
+        .name("book-struct")
+        .usage("struct ： declare ")
+        .action(|c: &Context| {
+            the_book::structs::define_instantiate::action_def();
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了

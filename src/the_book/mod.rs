@@ -12,3 +12,4 @@
 pub mod guessing_game ;
 pub mod common_prog_concept;
 pub mod ownership;
+pub mod structs;
