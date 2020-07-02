@@ -76,3 +76,14 @@ pub fn action_underscore(){
         _ => (),
     }
 }
+
+pub fn action_unwrap(){
+    let x: Option<u16> = Some(5) ;
+
+    if x != None {
+        // 拆包后 进行奇数偶数判断
+        if x.unwrap() % 2 == 0 {
+            println!("even") ;
+        }
+    }
+}
