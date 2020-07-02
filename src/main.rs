@@ -158,6 +158,18 @@ fn main() {
         .action(|c: &Context| {
             the_book::structs::example_prog::action_rectangles();
         }))
+        .command(Command::new()
+        .name("book-method")
+        .usage("struct ： method ")
+        .action(|c: &Context| {
+            the_book::structs::methods::action_method();
+        }))
+        .command(Command::new()
+        .name("book-if-let")
+        .usage("enum ： if-let ")
+        .action(|c: &Context| {
+            the_book::enums_pattern_match::if_let::action_if_let();
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
