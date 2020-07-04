@@ -5,6 +5,7 @@ mod front_of_house {
 }
 
 pub fn eat_at_restaurant() {
+    println!("fn eat_at_restaurant called!") ;
     // Absolute path
     crate::front_of_house::hosting::add_to_waitlist();
 

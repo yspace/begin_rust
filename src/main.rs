@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 
+//extern crate restaurant ;
+
 use seahorse::{App, Command, Context, Flag, FlagType};
 use std::env;
 
@@ -16,6 +18,9 @@ mod examples;
 mod the_book ;
 
 fn main() {
+
+    restaurant::eat_at_restaurant() ;
+
     let args: Vec<String> = env::args().collect();
     let app = App::new()
         .name(env!("CARGO_PKG_NAME"))

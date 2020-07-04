@@ -4,9 +4,15 @@ version = "0.1.0"
 authors = ["yiqing <yiqing_95@qq.com>"]
 edition = "2018"
 
+[workspace]
+members = [
+  "extc/restaurant"
+]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+restaurant = { path="./extc/restaurant" }
 rand = "0.3"
 
 serde = { version = "1.0", features = ["derive"] }
