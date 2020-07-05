@@ -74,10 +74,10 @@ pub fn eat_at_restaurant2() {
     hosting::add_to_waitlist();
 }
 
-pub use crate::front_of_house::hosting; // 重新暴露
+//pub use crate::front_of_house::hosting; // 重新暴露
 pub use crate::front_of_house::hosting as my_hosting; // 重新暴露 并使用as 给予一个别名
 
 //  ## use 引入合并
-use std::{cmp::Ordering, io}; // Specifying a nested path to bring multiple items with the same prefix into scope
-use std::io::{self, Write};  // This line brings std::io and std::io::Write into scope.
-use std::collections::*;     // * glob 引入特殊情况下才使用 比如测试
+//use std::{cmp::Ordering, io}; // Specifying a nested path to bring multiple items with the same prefix into scope
+//use std::io::{self, Write};  // This line brings std::io and std::io::Write into scope.
+//use std::collections::*;     // * glob 引入特殊情况下才使用 比如测试

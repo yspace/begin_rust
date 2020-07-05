@@ -175,6 +175,12 @@ fn main() {
         .action(|c: &Context| {
             the_book::enums_pattern_match::if_let::action_if_let();
         }))
+        .command(Command::new()
+        .name("book-vec")
+        .usage("collections ： vector ")
+        .action(|c: &Context| {
+            the_book::common_collections::vectors::action_vector();
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了

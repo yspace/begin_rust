@@ -14,3 +14,4 @@ pub mod common_prog_concept;
 pub mod ownership;
 pub mod structs;
 pub mod enums_pattern_match;
+pub mod common_collections;
