@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-//extern crate restaurant ;
+//extern crate restaurant ; // 不需要声明也可以直接用呀
 
 use seahorse::{App, Command, Context, Flag, FlagType};
 use std::env;
