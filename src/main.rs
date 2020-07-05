@@ -181,6 +181,12 @@ fn main() {
         .action(|c: &Context| {
             the_book::common_collections::vectors::action_vector();
         }))
+        .command(Command::new()
+        .name("book-string-op")
+        .usage("collections ： String ops ")
+        .action(|c: &Context| {
+            the_book::common_collections::strings::action_string() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
