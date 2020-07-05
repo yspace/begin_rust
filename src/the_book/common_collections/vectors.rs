@@ -41,6 +41,7 @@ pub fn action_vector(){
     }
 
     // ## Using an Enum to Store Multiple Types
+        #[derive(Debug)]
         enum SpreadsheetCell {
             Int(i32),
             Float(f64),
@@ -52,5 +53,7 @@ pub fn action_vector(){
             SpreadsheetCell::Text(String::from("blue")),
             SpreadsheetCell::Float(10.12),
         ];
-
+        for cell in row{
+            println!("{:?}", cell) ;
+        }
 }
