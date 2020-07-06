@@ -187,6 +187,12 @@ fn main() {
         .action(|c: &Context| {
             the_book::common_collections::strings::action_string() ;
         }))
+        .command(Command::new()
+        .name("book-hash-map")
+        .usage("collections ： hash map ")
+        .action(|c: &Context| {
+            the_book::common_collections::hash_maps::action_hash_map();
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
