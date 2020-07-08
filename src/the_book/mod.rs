@@ -15,3 +15,4 @@ pub mod ownership;
 pub mod structs;
 pub mod enums_pattern_match;
 pub mod common_collections;
+pub mod error_handling;
