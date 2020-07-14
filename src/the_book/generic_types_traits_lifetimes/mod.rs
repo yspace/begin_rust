@@ -1,10 +1,18 @@
+// ---------------------------------
+//  导出构造(mod or fn etc...):
+pub mod generic_data_types ;
+pub mod traits ;
+
+
+// ---------------------------------
+
 
 
 // finds the largest number in a list
 fn find_largest_number(){
     let number_list = vec![34, 50, 25, 100, 65];
 
-    let mut largest = mumber_list[0];
+    let mut largest = number_list[0];
 
     for number in number_list{
         if number > largest {
@@ -12,7 +20,7 @@ fn find_largest_number(){
         }
     }
 
-    println!("The largest number is {]", largest) ;
+    println!("The largest number is {}", largest) ;
 }
 // 重复处理两个不同的数字列表
 // 使用了相同的逻辑

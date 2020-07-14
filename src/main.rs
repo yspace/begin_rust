@@ -205,6 +205,27 @@ fn main() {
         .action(|c: &Context| {
             the_book::error_handling::recoverable_result::action_result() ;
         }))
+        .command(Command::new()
+        .name("book-generic")
+        .usage("generic ： func struct enum")
+        .action(|c: &Context| {
+            the_book::generic_types_traits_lifetimes::generic_data_types::action_use_generic_struct2() ;
+            the_book::generic_types_traits_lifetimes::generic_data_types::action_use_enum() ;
+            the_book::generic_types_traits_lifetimes::generic_data_types::action_in_method_def() ;
+            the_book::generic_types_traits_lifetimes::generic_data_types::action_mixup() ;
+        }))
+        .command(Command::new()
+        .name("book-traits")
+        .usage("generic ：traits ")
+        .action(|c: &Context| {
+            use the_book::generic_types_traits_lifetimes::traits ;
+            traits::action_define_implements() ;
+            traits::action_default_impl() ;
+            traits::action_default_impl2() ;
+
+            traits::action_traits_as_param() ;
+            traits::action_largest() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
