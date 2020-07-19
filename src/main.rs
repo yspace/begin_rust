@@ -226,6 +226,13 @@ fn main() {
             traits::action_traits_as_param() ;
             traits::action_largest() ;
         }))
+        .command(Command::new()
+            .name("book-lifetimes")
+            .usage("generic ：lifetimes ")
+        .action(|c: &Context| {
+            use the_book::generic_types_traits_lifetimes::lifetimes;
+            lifetimes::action_lifetimes() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
