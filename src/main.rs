@@ -233,6 +233,13 @@ fn main() {
             use the_book::generic_types_traits_lifetimes::lifetimes;
             lifetimes::action_lifetimes() ;
         }))
+        .command(Command::new()
+            .name("book-io-project")
+            .usage("an_io_project ")
+        .action(|c: &Context| {
+            use the_book::an_io_project;
+            an_io_project::accepting_cmd_args::action_minigrep() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
