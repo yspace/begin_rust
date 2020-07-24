@@ -238,7 +238,8 @@ fn main() {
             .usage("an_io_project ")
         .action(|c: &Context| {
             use the_book::an_io_project;
-            an_io_project::accepting_cmd_args::action_minigrep() ;
+//            an_io_project::accepting_cmd_args::action_minigrep() ;
+            an_io_project::improve_modularity_and_error_handling::action_main2() ;
         }))
         // ...
         ;

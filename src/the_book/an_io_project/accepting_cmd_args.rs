@@ -1,5 +1,8 @@
 
-use std::env ;
+use std::env;
+use std::fs;
+
+
 
 pub fn action_minigrep(){
 //    reading_the_argument_values() ;
@@ -13,6 +16,15 @@ pub fn action_minigrep(){
 
     println!("Searching for {}", query);
     println!("In file {}", filename);
+
+    // ## Reading a File
+    // --snip--
+//    println!("In file {}", filename);
+
+    let contents = fs::read_to_string(filename)
+        .expect("Something went wrong reading the file");
+
+    println!("With text:\n{}", contents);
 }
 
 fn reading_the_argument_values(){
