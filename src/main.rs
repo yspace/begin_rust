@@ -240,6 +240,8 @@ fn main() {
             use the_book::an_io_project;
 //            an_io_project::accepting_cmd_args::action_minigrep() ;
             an_io_project::improve_modularity_and_error_handling::action_main2() ;
+
+            an_io_project::minigrep_v1::action_main() ;
         }))
         // ...
         ;
