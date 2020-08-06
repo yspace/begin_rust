@@ -249,6 +249,8 @@ fn main() {
         .action(|c: &Context| {
             use the_book::functional_lang_features;
             functional_lang_features::closures::v1::action_generate_workout() ;
+            functional_lang_features::closures::v2::action_generate_workout() ;
+            functional_lang_features::closures::v3::action_generate_workout() ;
         }))
         // ...
         ;
