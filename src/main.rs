@@ -243,6 +243,13 @@ fn main() {
 
             an_io_project::minigrep_v1::action_main() ;
         }))
+        .command(Command::new()
+            .name("book-ff")
+            .usage("functional language features")
+        .action(|c: &Context| {
+            use the_book::functional_lang_features;
+            functional_lang_features::closures::action_generate_workout() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
