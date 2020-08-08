@@ -224,7 +224,37 @@ mod tests {
 
 }
 
-mod capturing_the_environment{
+pub mod capturing_the_environment{
     // closures have an additional capability that functions don’t have: they can capture their environment
     // and access variables from the scope in which they’re defined.
+
+    pub fn main() {
+        println!("===========< capturing_the_environment >==========") ;
+        let x = 4;
+
+        let equal_to_x = |z| z == x;
+
+        // 下面这个就不可以使用x啦 但闭包可以呢
+//        fn equal_to_x(z: i32) -> bool {
+//            z == x
+//        }
+
+        let y = 4;
+
+        assert!(equal_to_x(y));
+        println!("===========< capturing_the_environment />==========") ;
+
+    }
+
+    // Closures can capture values from their environment in three ways,
+    // which directly map to the three ways a function can take a parameter:
+    // taking ownership, borrowing mutably, and borrowing immutably.
+    // These are encoded in the three Fn traits as follows:
+
+    //
+//    FnOnce consumes the variables it captures from its enclosing scope, known as the closure’s environment. To consume the captured variables, the closure must take ownership of these variables and move them into the closure when it is defined. The Once part of the name represents the fact that the closure can’t take ownership of the same variables more than once, so it can be called only once.
+//    FnMut can change the environment because it mutably borrows values.
+//    Fn borrows values from the environment immutably.
+
+
 }
