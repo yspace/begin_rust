@@ -253,6 +253,8 @@ fn main() {
             functional_lang_features::closures::v3::action_generate_workout() ;
 
             functional_lang_features::closures::capturing_the_environment::main() ;
+
+            functional_lang_features::with_iterators::action_iterators() ;
         }))
         // ...
         ;
