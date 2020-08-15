@@ -20,3 +20,4 @@ pub mod generic_types_traits_lifetimes;
 pub mod writing_automated_tests;
 pub mod an_io_project;
 pub mod functional_lang_features;
+pub mod smart_pointers;

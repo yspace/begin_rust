@@ -256,6 +256,15 @@ fn main() {
 
             functional_lang_features::with_iterators::action_iterators() ;
         }))
+
+        .command(Command::new()
+            .name("book-sp")
+            .usage("cargo run book-sp")
+        .action(|c: &Context| {
+            use the_book::smart_pointers;
+
+            smart_pointers::using_box::action_box() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
