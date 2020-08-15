@@ -3,20 +3,26 @@ name = "hello_rust"
 version = "0.1.0"
 authors = ["yiqing <yiqing_95@qq.com>"]
 edition = "2018"
+description = "my playground for learning the rust language"
+license = "MIT OR Apache-2.0"
 
 [workspace]
 members = [
   "extc/restaurant",
   "extc/adder",
-  "extc/minigrep"
+  "extc/minigrep",
+  "extc/my_crate",
+  "extc/art"
 ]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-restaurant = { path="./extc/restaurant" }
-minigrep = { path="./extc/minigrep" }
-adder = { path="./extc/adder" }
+restaurant = { path="./extc/restaurant"  , version = "^0.1"}
+minigrep = { path="./extc/minigrep"  , version = "^0.1" }
+adder = { path="./extc/adder" , version = "^0.1"}
+my_crate = { path="./extc/my_crate"  , version = "^0.1" }
+art = { path="./extc/art"  , version = "*" }
 rand = "0.3"
 
 serde = { version = "1.0", features = ["derive"] }
@@ -25,3 +31,11 @@ serde_yaml = "0.8"
 
 structopt = "0.3"
 seahorse = "0.7"
+
+# 针对不同的profile 段配置
+
+[profile.dev]
+opt-level = 0 # default opt-level for dev is 0
+
+[profile.release]
+opt-level = 3
