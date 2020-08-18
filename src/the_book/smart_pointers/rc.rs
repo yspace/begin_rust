@@ -26,6 +26,8 @@ fn increases_the_reference_count(){
     {
         let c = Cons(4, Rc::clone(&a));
         println!("count after creating c = {}", Rc::strong_count(&a));
+
+        // the implementation of the Drop trait decreases the reference count automatically when an Rc<T> value goes out of scope.
     }
     println!("count after c goes out of scope = {}", Rc::strong_count(&a));
 }
