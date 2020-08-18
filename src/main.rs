@@ -267,6 +267,7 @@ fn main() {
             smart_pointers::with_the_deref_trait::action_deref_trait() ;
             smart_pointers::with_the_drop_trait::action_drop_trait() ;
             smart_pointers::rc::action_rc() ;
+            smart_pointers::ref_cell::action_refcell() ;
         }))
         // ...
         ;
