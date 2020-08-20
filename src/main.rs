@@ -268,6 +268,18 @@ fn main() {
             smart_pointers::with_the_drop_trait::action_drop_trait() ;
             smart_pointers::rc::action_rc() ;
             smart_pointers::ref_cell::action_refcell() ;
+
+            smart_pointers::reference_cycles::action_reference_cycle() ;
+        }))
+
+        .command(Command::new()
+            .name("book-fc")
+            .usage("cargo run book-fc")
+        .action(|c: &Context| {
+            use the_book::fearless_concurrency;
+
+            fearless_concurrency::using_threads::action_run_simultaneously() ;
+
         }))
         // ...
         ;
