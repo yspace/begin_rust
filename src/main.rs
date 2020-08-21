@@ -283,6 +283,15 @@ fn main() {
             fearless_concurrency::shared_state_concurrency::action_share_state() ;
 
         }))
+
+        .command(Command::new()
+            .name("book-oop")
+            .usage("cargo run book-oop")
+        .action(|c: &Context| {
+            use the_book::object_oriented;
+            object_oriented::using_trait_objects::action_main() ;
+
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了

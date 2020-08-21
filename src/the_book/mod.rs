@@ -22,3 +22,4 @@ pub mod an_io_project;
 pub mod functional_lang_features;
 pub mod smart_pointers;
 pub mod fearless_concurrency;
+pub mod object_oriented;
