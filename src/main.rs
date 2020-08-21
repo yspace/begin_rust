@@ -280,6 +280,7 @@ fn main() {
 
             fearless_concurrency::using_threads::action_run_simultaneously() ;
             fearless_concurrency::using_message::action_using_message_passing() ;
+            fearless_concurrency::shared_state_concurrency::action_share_state() ;
 
         }))
         // ...
