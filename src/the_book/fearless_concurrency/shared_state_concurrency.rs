@@ -59,7 +59,10 @@ fn multiple_ownership(){
 //    println!("Result: {}", *counter.lock().unwrap());
 }
 
+/// Using an Arc<T> to wrap the Mutex<T> to be able to share ownership across multiple threads
 fn using_arc(){
+    // atomics work like primitive types but are safe to share across threads.
+
     let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
 
