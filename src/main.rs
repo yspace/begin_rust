@@ -279,6 +279,7 @@ fn main() {
             use the_book::fearless_concurrency;
 
             fearless_concurrency::using_threads::action_run_simultaneously() ;
+            fearless_concurrency::using_message::action_using_message_passing() ;
 
         }))
         // ...

@@ -46,8 +46,12 @@ fn using_move_closures(){
 
 //    let handle = thread::spawn(|| {
     let handle = thread::spawn(move|| {
+        //  Using the move keyword to force a closure to take ownership of the values it uses
+
+        
         println!("Here's a vector: {:?}", v);
     });
 //    drop(v); // oh no!
     handle.join().unwrap();
 }
+
