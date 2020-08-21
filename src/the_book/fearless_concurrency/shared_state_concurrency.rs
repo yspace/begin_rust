@@ -5,6 +5,8 @@ use std::sync::{Arc, Mutex};
 
 pub fn action_share_state(){
     using_mutex() ;
+
+    using_arc() ;
 }
 
 fn using_mutex(){
