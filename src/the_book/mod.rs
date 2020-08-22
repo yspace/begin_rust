@@ -23,3 +23,4 @@ pub mod functional_lang_features;
 pub mod smart_pointers;
 pub mod fearless_concurrency;
 pub mod object_oriented;
+pub mod patterns_and_matching;

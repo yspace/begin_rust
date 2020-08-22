@@ -292,6 +292,15 @@ fn main() {
             object_oriented::using_trait_objects::action_main() ;
 
         }))
+
+        .command(Command::new()
+            .name("book-pm")
+            .usage("cargo run book-pm")
+        .action(|c: &Context| {
+            use the_book::patterns_and_matching ;
+            patterns_and_matching::all_the_places::action_main() ;
+
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
