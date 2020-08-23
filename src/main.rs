@@ -300,6 +300,9 @@ fn main() {
             use the_book::patterns_and_matching ;
             patterns_and_matching::all_the_places::action_main() ;
 
+            patterns_and_matching::refutability::action_main() ;
+            patterns_and_matching::pattern_syntax::action_main() ;
+
         }))
         // ...
         ;
