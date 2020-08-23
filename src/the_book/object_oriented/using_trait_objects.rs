@@ -69,10 +69,11 @@ pub mod some_lib {
     }
 }
 
+use self::some_lib::SelectBox;
 //use gui::{Button, Screen};
 //use self::{Button, Screen} ;
 pub fn action_main(){
-    use self::some_lib::SelectBox;
+
 
     let screen = Screen {
         components: vec![
@@ -94,4 +95,37 @@ pub fn action_main(){
     };
 
     screen.run();
+
+    // 扩充知识：试下any
+    let sb =   Box::new(SelectBox {
+        width: 75,
+        height: 10,
+        options: vec![
+            String::from("Yes"),
+            String::from("Maybe"),
+            String::from("No"),
+        ],
+    }) ;
+    print_any_draw(&sb) ;
+
+    let mut a: &Any;
+    a = &sb;
+    println!("{:?}", a.type_id());
+    assert!(a.is::<Box<SelectBox>>());
+
+}
+
+use std::any::{Any, TypeId};
+// see: https://blog.csdn.net/K_Ohaha/article/details/105421601
+// see: https://bbs.csdn.net/topics/392031097?locationNum=6&fps=1
+// see: https://rustcc.gitbooks.io/rustprimer/content/trait/trait-object.html
+fn print_any_draw(any: &Any) {
+    // 向下转型
+    if let Some(v) = any.downcast_ref::<Box<SelectBox>>() {
+        println!("it is a select-box type");
+    } else if let Some(v) = any.downcast_ref::<&str>() {
+        println!("str {:?}", v);
+    } else {
+        println!("else");
+    }
 }

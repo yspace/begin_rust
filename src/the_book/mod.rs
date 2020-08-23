@@ -24,3 +24,4 @@ pub mod smart_pointers;
 pub mod fearless_concurrency;
 pub mod object_oriented;
 pub mod patterns_and_matching;
+pub mod advanced_features;
