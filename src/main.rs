@@ -304,6 +304,16 @@ fn main() {
             patterns_and_matching::pattern_syntax::action_main() ;
 
         }))
+
+        .command(Command::new()
+            .name("book-af")
+            .usage("cargo run book-af")
+        .action(|c: &Context| {
+            // 高级特性
+
+            use the_book::advanced_features ;
+            advanced_features::advanced_traits::action_main() ;
+        }))
         // ...
         ;
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
@@ -312,3 +322,4 @@ fn main() {
 
     app.run(args);
 }
+
