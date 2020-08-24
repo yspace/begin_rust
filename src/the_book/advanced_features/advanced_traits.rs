@@ -219,7 +219,7 @@ fn newtype_pattern(){
         }
     }
     // 试下效果
-    let inner = &*w ;
+    let inner = &*w ; // 解引用 并借用
     for item in inner{
         println!("from inner type vec!  {}", item) ;
     }
