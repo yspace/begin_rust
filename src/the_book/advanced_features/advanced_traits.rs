@@ -34,6 +34,7 @@ mod examples{
 
 use std::ops::Add;
 
+
 #[derive(Debug, PartialEq)]
 struct Point {
     x: i32,
@@ -195,6 +196,7 @@ fn using_super_traits(){
 
 fn newtype_pattern(){
     use std::fmt;
+    use std::ops::Deref;
 
     // Creating a Wrapper type around Vec<String> to implement Display
     struct Wrapper(Vec<String>);
@@ -208,7 +210,21 @@ fn newtype_pattern(){
     let w = Wrapper(vec![String::from("hello"), String::from("world")]);
     println!("w = {}", w);
 
-    // 缺点： 不能当内部类型对待 如果需要实现内部类型的所有方法 有个替代方法：实现Deref trait 解引用！
+    // 实现解引用
+    impl Deref for Wrapper{
+        type Target = Vec<String>;
+
+        fn deref(&self) -> &Self::Target {
+            &self.0
+        }
+    }
+    // 试下效果
+    let inner = &*w ;
+    for item in inner{
+        println!("from inner type vec!  {}", item) ;
+    }
+
+    // “新类型模式”缺点： 不能当内部类型对待 如果需要实现内部类型的所有方法 有个替代方法：实现Deref trait 解引用！
     // If we wanted the new type to have every method the inner type has, implementing the Deref trait
     //  on the Wrapper to return the inner type would be a solution.
     //
