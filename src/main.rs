@@ -321,6 +321,7 @@ fn main() {
     // TODO 今天学了所有权的传递 移动 返回  可以籍此重新改动下上面的command方法 太长了
      // let app = xxx_mod::init_mod(app) ; // 传入传出
      let app = my_lib::mod_init(app) ;
+     let app = examples::mod_init(app) ;
 
     app.run(args);
 }

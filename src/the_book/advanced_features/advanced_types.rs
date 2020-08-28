@@ -10,7 +10,7 @@ fn declare_type_alias(){
     let x: i32 = 5 ;
     let y: Kilometer = 5 ;
 
-    println!("x+y = {}", x + y)
+    println!("x+y = {}", x + y);
 
     // 比如下面这个长的类型
     {
@@ -19,10 +19,10 @@ fn declare_type_alias(){
         fn takes_long_type(f: Box<dyn Fn() + Send + 'static>) {
             // --snip--
         }
-
-        fn returns_long_type() -> Box<dyn Fn() + Send + 'static> {
-            // --snip--
-        }
+//
+//        fn returns_long_type() -> Box<dyn Fn() + Send + 'static> {
+//            // --snip--
+//        }
     }
     // Introducing a type alias Thunk to reduce repetition
     {
@@ -34,9 +34,9 @@ fn declare_type_alias(){
             // --snip--
         }
 
-        fn returns_long_type() -> Thunk {
-            // --snip--
-        }
+//        fn returns_long_type() -> Thunk {
+//            // --snip--
+//        }
     }
 
     // Type aliases are also commonly used with the Result<T, E> type for reducing repetition.
@@ -45,17 +45,20 @@ fn declare_type_alias(){
 fn the_never_type(){
     fn bar() -> ! {
         // --snip--
+        loop {
+
+        }
     }
     // 例子
     {
-        impl<T> Option<T> {
-            pub fn unwrap(self) -> T {
-                match self {
-                    Some(val) => val,
-                    None => panic!("called `Option::unwrap()` on a `None` value"),
-                }
-            }
-        }
+//        impl<T> Option<T> {
+//            pub fn unwrap(self) -> T {
+//                match self {
+//                    Some(val) => val,
+//                    None => panic!("called `Option::unwrap()` on a `None` value"),
+//                }
+//            }
+//        }
         //  Rust sees that val has the type T and panic! has the type !, so the result of the overall match expression is T.
 
 
