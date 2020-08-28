@@ -313,6 +313,8 @@ fn main() {
 
             use the_book::advanced_features ;
             advanced_features::advanced_traits::action_main() ;
+
+            advanced_features::advanced_types::action_main() ;
         }))
         // ...
         ;
