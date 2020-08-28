@@ -7,9 +7,13 @@
 //
 ////  导出
 //pub use self::destruct::*;
-use seahorse::{App, Command, Context, Flag, FlagType};
 
 pub mod hello_world ;
+pub mod primitives ;
+
+use seahorse::{App, Command, Context, Flag, FlagType};
+
+
 
 
 pub fn mod_init(app: App) -> App {
@@ -21,4 +25,13 @@ pub fn mod_init(app: App) -> App {
                 print!("hi example")
             })
     )
+        .command(Command::new()
+            .name("rbe-primitive")
+            .usage("cargo run ebe-primitive")
+            .action(|c: &Context| {
+                primitives::action_main() ;
+
+                primitives::literals_and_operators::action_main() ;
+
+            }))
 }
