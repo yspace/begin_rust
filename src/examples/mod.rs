@@ -32,6 +32,7 @@ pub fn mod_init(app: App) -> App {
                 primitives::action_main() ;
 
                 primitives::literals_and_operators::action_main() ;
+                primitives::arrays_and_slices::action_main() ;
 
             }))
 }

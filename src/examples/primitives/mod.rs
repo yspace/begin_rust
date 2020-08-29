@@ -1,4 +1,5 @@
 pub mod literals_and_operators ;
+pub mod arrays_and_slices ;
 
 pub fn action_main() {
     // Variables can be type annotated.
