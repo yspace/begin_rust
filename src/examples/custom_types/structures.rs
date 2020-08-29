@@ -62,7 +62,7 @@ pub fn  action_main(){
     let _rectangle = Rectangle{
         // 结构实例化也是一个表达式
         top_left: Point{x: left_edge, y: top_edge},
-        bottom_right: bottom_right ,
+        bottom_right: bottom_right , // 同名可以用短语法简化 只写一个字段就好
     };
 
     // 实例化一个unit结构
