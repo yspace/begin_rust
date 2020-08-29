@@ -15,8 +15,6 @@ pub mod custom_types ;
 use seahorse::{App, Command, Context, Flag, FlagType};
 
 
-
-
 pub fn mod_init(app: App) -> App {
     // build commands
     app.command(
@@ -35,5 +33,11 @@ pub fn mod_init(app: App) -> App {
                 primitives::literals_and_operators::action_main() ;
                 primitives::arrays_and_slices::action_main() ;
 
+            }))
+        .command(Command::new()
+            .name("rbe-custom-type")
+            .usage("cargo run ebe-custom-type")
+            .action(|c: &Context| {
+                custom_types::structures::action_main() ;
             }))
 }
