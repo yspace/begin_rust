@@ -39,5 +39,7 @@ pub fn mod_init(app: App) -> App {
             .usage("cargo run ebe-custom-type")
             .action(|c: &Context| {
                 custom_types::structures::action_main() ;
+                custom_types::enums::action_main() ;
             }))
 }
+
