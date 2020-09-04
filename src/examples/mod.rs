@@ -11,6 +11,8 @@
 pub mod hello_world ;
 pub mod primitives ;
 pub mod custom_types ;
+pub mod variable_bindings ;
+pub mod types ;
 
 use seahorse::{App, Command, Context, Flag, FlagType};
 
@@ -40,6 +42,27 @@ pub fn mod_init(app: App) -> App {
             .action(|c: &Context| {
                 custom_types::structures::action_main() ;
                 custom_types::enums::action_main() ;
+                custom_types::constants::action_main() ;
+            }))
+        .command(Command::new()
+            .name("rbe-var-binding")
+            .usage("cargo run ebe-var-binding")
+            .action(|c: &Context| {
+                variable_bindings::main() ;
+                variable_bindings::mutability::action_main() ;
+                variable_bindings::scope_and_shadowing::action_main() ;
+                variable_bindings::declare_first::action_main() ;
+                variable_bindings::freezing::action_main() ;
+            }))
+
+        .command(Command::new()
+            .name("rbe-types")
+            .usage("cargo run ebe-types")
+            .action(|c: &Context| {
+                types::casting::action_main() ;
+                types::literals::action_main() ;
+                types::inference::action_main() ;
+                types::aliasing::action_main() ;
             }))
 }
 
