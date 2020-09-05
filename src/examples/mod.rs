@@ -13,6 +13,7 @@ pub mod primitives ;
 pub mod custom_types ;
 pub mod variable_bindings ;
 pub mod types ;
+pub mod conversion ;
 
 use seahorse::{App, Command, Context, Flag, FlagType};
 
@@ -63,6 +64,14 @@ pub fn mod_init(app: App) -> App {
                 types::literals::action_main() ;
                 types::inference::action_main() ;
                 types::aliasing::action_main() ;
+            }))
+        .command(Command::new()
+            .name("rbe-conversion")
+            .usage("cargo run ebe-conversion")
+            .action(|c: &Context| {
+                conversion::from_and_into::act_main() ;
+                conversion::try_from_and_into::act_main() ;
+                conversion::to_and_from_strings::act_main() ;
             }))
 }
 
