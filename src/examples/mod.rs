@@ -86,6 +86,8 @@ pub fn mod_init(app: App) -> App {
             .usage("cargo run ebe-flow-of-control")
             .action(|c: &Context| {
                 flow_of_control::if_else::act_main() ;
+
+                flow_of_control::loops::act_main() ;
             }))
 }
 
