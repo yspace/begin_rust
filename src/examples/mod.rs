@@ -14,6 +14,7 @@ pub mod custom_types ;
 pub mod variable_bindings ;
 pub mod types ;
 pub mod conversion ;
+pub mod expressions ;
 
 use seahorse::{App, Command, Context, Flag, FlagType};
 
@@ -72,6 +73,12 @@ pub fn mod_init(app: App) -> App {
                 conversion::from_and_into::act_main() ;
                 conversion::try_from_and_into::act_main() ;
                 conversion::to_and_from_strings::act_main() ;
+            }))
+        .command(Command::new()
+            .name("rbe-expressions")
+            .usage("cargo run ebe-expressions")
+            .action(|c: &Context| {
+                expressions::action_main() ;
             }))
 }
 
