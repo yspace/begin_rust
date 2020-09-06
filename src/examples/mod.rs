@@ -15,6 +15,7 @@ pub mod variable_bindings ;
 pub mod types ;
 pub mod conversion ;
 pub mod expressions ;
+pub mod flow_of_control ;
 
 use seahorse::{App, Command, Context, Flag, FlagType};
 
@@ -70,7 +71,7 @@ pub fn mod_init(app: App) -> App {
             .name("rbe-conversion")
             .usage("cargo run ebe-conversion")
             .action(|c: &Context| {
-                conversion::from_and_into::act_main() ;
+                conversion::from_and_into::act_main()   ;
                 conversion::try_from_and_into::act_main() ;
                 conversion::to_and_from_strings::act_main() ;
             }))
@@ -79,6 +80,12 @@ pub fn mod_init(app: App) -> App {
             .usage("cargo run ebe-expressions")
             .action(|c: &Context| {
                 expressions::action_main() ;
+            }))
+        .command(Command::new()
+            .name("rbe-flow-of-control")
+            .usage("cargo run ebe-flow-of-control")
+            .action(|c: &Context| {
+                flow_of_control::if_else::act_main() ;
             }))
 }
 
