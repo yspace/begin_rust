@@ -90,6 +90,7 @@ pub fn mod_init(app: App) -> App {
                 flow_of_control::loops::act_main() ;
                 flow_of_control::whiles::act_main() ;
                 flow_of_control::for_loops::act_main() ;
+                flow_of_control::matches::act_main() ;
             }))
 }
 
