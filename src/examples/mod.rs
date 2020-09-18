@@ -16,6 +16,7 @@ pub mod types ;
 pub mod conversion ;
 pub mod expressions ;
 pub mod flow_of_control ;
+pub mod functions ;
 
 use seahorse::{App, Command, Context, Flag, FlagType};
 
@@ -93,6 +94,13 @@ pub fn mod_init(app: App) -> App {
                 flow_of_control::matches::act_main() ;
 
                 flow_of_control::if_let::act_main() ;
+                flow_of_control::while_let::nicer_way() ;
+            }))
+        .command(Command::new()
+            .name("rbe-functions")
+            .usage("cargo run ebe-functions")
+            .action(|c: &Context| {
+                functions::act_main() ;
             }))
 }
 
