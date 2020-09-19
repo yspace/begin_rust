@@ -98,9 +98,10 @@ pub fn mod_init(app: App) -> App {
             }))
         .command(Command::new()
             .name("rbe-functions")
-            .usage("cargo run ebe-functions")
+            .usage("cargo run rbe-functions")
             .action(|c: &Context| {
                 functions::act_main() ;
+                functions::methods::act_main() ;
             }))
 }
 

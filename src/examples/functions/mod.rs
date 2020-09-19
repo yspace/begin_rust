@@ -1,3 +1,4 @@
+pub mod methods ;
 
 pub fn act_main(){
     fizz_buzz::main() ;
